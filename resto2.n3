@@ -4,6 +4,7 @@
 @prefix resto: <http://example.org/restaurant#>.
 @prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
 @prefix : <http://example.org/vocab#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
 
 :Areeb a foaf:Person.
 :RestAppointment resto:hasDate "12/12/12";
@@ -25,6 +26,9 @@ _:sk1 http:body :Gent.
 @prefix dc: <http://purl.org/dc/terms/>.
 
 {	?user a foaf:Person.
+
+  # Previously used bindings of this API call are not allowed anymore
+  { ?user log:notEqualTo :Areeb. }!log:conclusion
 }
 =>
 {	_:request http:methodName "GET";
