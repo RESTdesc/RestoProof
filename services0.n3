@@ -6,6 +6,7 @@
 @prefix dc: <http://purl.org/dc/terms/>.
 
 {	?user a foaf:Person.
+  ?document a foaf:Document.
 }
 =>
 {	_:request http:methodName "GET";

@@ -7,9 +7,13 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 
 {	?user a foaf:Person.
+  ?document a foaf:Document.
 
   # Previously used bindings of this API call are not allowed anymore
-  { ?user log:notEqualTo :Areeb. }!log:conclusion
+  {
+    ?user log:notEqualTo :Areeb.
+    ?document log:notEqualTo :MyDocument.
+  }!log:conclusion
 }
 =>
 {	_:request http:methodName "GET";

@@ -139,8 +139,10 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   :Areeb <http://xmlns.com/foaf/0.1/based_near> _:sk2.
   _:sk2 a con:Address}; r:evidence (
   <#lemma16>
-  [ a r:Fact; r:gives {{:Areeb log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>} log:conclusion true}]);
-  r:rule <#lemma17>.
+  <#lemma17>
+  [ a r:Fact; r:gives {{:Areeb log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>.
+    :MyDocument log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#MyDocument>} log:conclusion true}]);
+  r:rule <#lemma18>.
 
 <#lemma13> a r:Extraction; r:gives {{?x0 a con:Address} => {?x1 http:methodName "GET".
   ?x1 http:requestURI ("?location= " ?x0).
@@ -172,13 +174,18 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 <#lemma16> a r:Extraction; r:gives {:Areeb a <http://xmlns.com/foaf/0.1/Person>};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0alt.n3>].
 
-<#lemma17> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>.
-  {?x0 log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>} log:conclusion ?x1} => {?x2 http:methodName "GET".
-  ?x2 http:requestURI (?x0).
-  ?x2 http:resp ?x3.
-  ?x3 http:body ?x4.
-  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x4.
-  ?x4 a con:Address}};
+<#lemma17> a r:Extraction; r:gives {:MyDocument a <http://xmlns.com/foaf/0.1/Document>};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0alt.n3>].
+
+<#lemma18> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>.
+  ?x1 a <http://xmlns.com/foaf/0.1/Document>.
+  {?x0 log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>.
+    ?x1 log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#MyDocument>} log:conclusion ?x2} => {?x3 http:methodName "GET".
+  ?x3 http:requestURI (?x0).
+  ?x3 http:resp ?x4.
+  ?x4 http:body ?x5.
+  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x5.
+  ?x5 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
 #ENDS 0.140 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0

@@ -7,6 +7,7 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 
 :Areeb a foaf:Person.
+:MyDocument a foaf:Document.
 :RestAppointment resto:hasDate "12/12/12";
 	resto:isOn "<#myAppointments>".
 

@@ -137,8 +137,9 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   _:sk1 http:body _:sk2.
   :Areeb <http://xmlns.com/foaf/0.1/based_near> _:sk2.
   _:sk2 a con:Address}; r:evidence (
-  <#lemma16>);
-  r:rule <#lemma17>.
+  <#lemma16>
+  <#lemma17>);
+  r:rule <#lemma18>.
 
 <#lemma13> a r:Extraction; r:gives {{?x0 a con:Address} => {?x1 http:methodName "GET".
   ?x1 http:requestURI ("?location= " ?x0).
@@ -170,13 +171,17 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 <#lemma16> a r:Extraction; r:gives {:Areeb a <http://xmlns.com/foaf/0.1/Person>};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0.n3>].
 
-<#lemma17> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>} => {?x1 http:methodName "GET".
-  ?x1 http:requestURI (?x0).
-  ?x1 http:resp ?x2.
-  ?x2 http:body ?x3.
-  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x3.
-  ?x3 a con:Address}};
+<#lemma17> a r:Extraction; r:gives {:MyDocument a <http://xmlns.com/foaf/0.1/Document>};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0.n3>].
+
+<#lemma18> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>.
+  ?x1 a <http://xmlns.com/foaf/0.1/Document>} => {?x2 http:methodName "GET".
+  ?x2 http:requestURI (?x0).
+  ?x2 http:resp ?x3.
+  ?x3 http:body ?x4.
+  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x4.
+  ?x4 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
-#ENDS 0.066 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.074 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 

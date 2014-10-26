@@ -4,5 +4,6 @@
 @prefix : <http://example.org/vocab#>.
 
 :Areeb a foaf:Person.
+:MyDocument a foaf:Document.
 :RestAppointment resto:hasDate "12/12/12";
 	resto:isOn "<#myAppointments>".

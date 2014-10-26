@@ -1,6 +1,11 @@
 #!/bin/bash
 # resto test case pragmatic proof path
+echo "PRE-PROOF: expecting 7 inferences"
 cwm services0.n3 state0.n3 --think --filter=restoG.n3 --why > resto-cwm-proof0.n3
 eye resto-cwm-proof0.n3 --query step-count.n3 --strings 2>/dev/null
+echo "POST-PROOF: expecting 6 inferences"
 cwm services1.n3 state1.n3 --think --filter=restoG.n3 --why > resto-cwm-proof1.n3
 eye resto-cwm-proof1.n3 --query step-count.n3 --strings 2>/dev/null
+echo "POST-PROOF with different state: expecting 7 inferences"
+cwm services1.n3 state0.n3 --think --filter=restoG.n3 --why > resto-cwm-proof0alt.n3
+eye resto-cwm-proof0alt.n3 --query step-count.n3 --strings 2>/dev/null
