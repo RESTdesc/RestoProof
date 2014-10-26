@@ -1,0 +1,15 @@
+PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+
+{
+  [] e:findall ( ?x { ?x a r:Inference. } ?inferences ).
+  ?inferences math:memberCount ?inferenceCount.
+  ("Found " ?inferenceCount " inferences.") string:concatenation ?message.
+}
+=>
+{
+  [] log:outputString ?message.
+}.
