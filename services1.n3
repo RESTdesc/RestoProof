@@ -23,6 +23,23 @@
 	_:address a con:Address.
 }.
 
+{	?user a foaf:Person.
+  ?document a foaf:Document.
+
+  # Previously used bindings of this API call are not allowed anymore
+  {
+    ?user log:notEqualTo :Areeb.
+    ?document log:notEqualTo :MyDocument.
+  }!log:conclusion
+}
+=>
+{	_:request http:methodName "GET";
+		http:requestURI (?user);
+		http:resp [ http:body _:address ].
+	?user foaf:based_near _:address.
+	_:address a con:Address.
+}.
+
 #The Location API, takes the address and outputs a geo-location
 @prefix http: <http://www.w3.org/2011/http#>.
 @prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
