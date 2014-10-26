@@ -1,0 +1,18 @@
+#The state after calling the preferences API
+@prefix http: <http://www.w3.org/2011/http#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix resto: <http://example.org/restaurant#>.
+@prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
+@prefix : <http://example.org/vocab#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+
+:Areeb a foaf:Person.
+:RestAppointment resto:hasDate "12/12/12";
+	resto:isOn "<#myAppointments>".
+
+_:sk0 http:methodName "GET".
+_:sk0 http:requestURI (:Areeb).
+_:sk0 http:resp _:sk1.
+_:sk1 http:body :Gent.
+:Areeb foaf:based_near :Gent.
+:Gent a con:Address.

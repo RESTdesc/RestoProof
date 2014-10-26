@@ -1,6 +1,6 @@
 #!/bin/bash
 # resto test case pragmatic proof path
-cwm resto.n3  --think --filter=restoG.n3 --why > resto-cwm-proof.n3
-eye resto-cwm-proof.n3  --query step-count.n3 --nope 2>/dev/null | grep inferences
-cwm resto2.n3 --think --filter=restoG.n3 --why > resto-cwm-proof2.n3
-eye resto-cwm-proof2.n3 --query step-count.n3 --nope 2>/dev/null | grep inferences
+cwm services0.n3 state0.n3 --think --filter=restoG.n3 --why > resto-cwm-proof0.n3
+eye resto-cwm-proof0.n3 --query step-count.n3 --strings 2>/dev/null
+cwm services1.n3 state1.n3 --think --filter=restoG.n3 --why > resto-cwm-proof1.n3
+eye resto-cwm-proof1.n3 --query step-count.n3 --strings 2>/dev/null

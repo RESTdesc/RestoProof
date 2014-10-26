@@ -1,0 +1,8 @@
+#The initial state
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix resto: <http://example.org/restaurant#>.
+@prefix : <http://example.org/vocab#>.
+
+:Areeb a foaf:Person.
+:RestAppointment resto:hasDate "12/12/12";
+	resto:isOn "<#myAppointments>".

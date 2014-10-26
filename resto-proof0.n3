@@ -1,15 +1,15 @@
-#Processed by Id: euler.yap 7485 2014-10-23 18:44:53Z josd
-#eye --single-answer resto.n3 --query restoG.n3
+#Processed by Id: euler.yap 7487 2014-10-26 19:13:49Z josd
+#eye --single-answer services0.n3 state0.n3 --query restoG.n3
 
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX resto: <http://example.org/restaurant#>
-PREFIX : <http://example.org/vocab#>
 PREFIX http: <http://www.w3.org/2011/http#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX con: <http://www.w3.org/2000/10/swap/pim/contact#>
 PREFIX tmpl: <http://purl.org/restdesc/http-template#>
 PREFIX dc: <http://purl.org/dc/terms/>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX meteo: <http://purl.org/ns/meteo#>
+PREFIX resto: <http://example.org/restaurant#>
+PREFIX : <http://example.org/vocab#>
 PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 
 [ a r:Proof, r:Conjunction;
@@ -67,7 +67,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   r:rule <#lemma11>.
 
 <#lemma5> a r:Extraction; r:gives {:RestAppointment resto:hasDate "12/12/12"};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0.n3>].
 
 <#lemma6> a r:Extraction; r:gives {{?x0 resto:reservationList ?x1.
   ?x2 resto:isOutside ?x3.
@@ -80,7 +80,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x8 resto:onDate ?x5.
   ?x8 resto:place ?x9.
   ?x9 resto:isOutside ?x3}};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
 <#lemma7> a r:Inference; r:gives {_:sk3 http:methodName "GET".
   _:sk3 http:requestURI ("?location= " _:sk2).
@@ -111,7 +111,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   r:rule <#lemma15>.
 
 <#lemma10> a r:Extraction; r:gives {:RestAppointment resto:isOn "<#myAppointments>"};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0.n3>].
 
 <#lemma11> a r:Extraction; r:gives {{?x0 geo:lat ?x1.
   ?x0 geo:long ?x2.
@@ -129,7 +129,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x11 a resto:Restaurant.
   ?x11 resto:reservationList ?x14.
   ?x15 resto:isOutside ?x12}};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
 <#lemma12> a r:Inference; r:gives {_:sk0 http:methodName "GET".
   _:sk0 http:requestURI (:Areeb).
@@ -147,7 +147,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x3 a geo:Point.
   ?x3 geo:lat ?x4.
   ?x3 geo:long ?x5}};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
 <#lemma14> a r:Extraction; r:gives {{?x0 geo:lat ?x1.
   ?x0 geo:long ?x2} => {?x3 http:methodName "GET".
@@ -156,7 +156,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x4 http:body ?x5.
   ?x0 meteo:pressure ?x6.
   ?x6 meteo:millibar ?x5}};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
 <#lemma15> a r:Extraction; r:gives {{?x0 geo:lat ?x1.
   ?x0 geo:long ?x2} => {?x3 http:methodName "GET".
@@ -165,10 +165,10 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x4 http:body ?x5.
   ?x0 meteo:temperature ?x6.
   ?x6 meteo:celsius ?x5}};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
 <#lemma16> a r:Extraction; r:gives {:Areeb a <http://xmlns.com/foaf/0.1/Person>};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0.n3>].
 
 <#lemma17> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>} => {?x1 http:methodName "GET".
   ?x1 http:requestURI (?x0).
@@ -176,7 +176,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x2 http:body ?x3.
   ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x3.
   ?x3 a con:Address}};
-  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
-#ENDS 0.077 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.066 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 

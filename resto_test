@@ -1,6 +1,6 @@
 #!/bin/bash
 # resto test case pragmatic proof path
-eye "$@" --single-answer resto.n3  --query restoG.n3 > resto-proof.n3  2>/dev/null
-eye resto-proof.n3  --query step-count.n3 --nope 2>/dev/null | grep inferences
-eye "$@" --single-answer resto2.n3 --query restoG.n3 > resto-proof2.n3 2>/dev/null
-eye resto-proof2.n3 --query step-count.n3 --nope 2>/dev/null | grep inferences
+eye "$@" --single-answer services0.n3 state0.n3  --query restoG.n3 > resto-proof0.n3  2>/dev/null
+eye resto-proof0.n3 --query step-count.n3 --strings 2>/dev/null
+eye "$@" --single-answer services1.n3 state1.n3  --query restoG.n3 > resto-proof1.n3  2>/dev/null
+eye resto-proof1.n3 --query step-count.n3 --strings 2>/dev/null

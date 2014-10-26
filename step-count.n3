@@ -7,7 +7,7 @@ PREFIX string: <http://www.w3.org/2000/10/swap/string#>
 {
   [] e:findall ( ?x { ?x a r:Inference. } ?inferences ).
   ?inferences math:memberCount ?inferenceCount.
-  ("Found " ?inferenceCount " inferences.") string:concatenation ?message.
+  ("Found " ?inferenceCount " inferences.\n") string:concatenation ?message.
 }
 =>
 {
