@@ -1,6 +1,11 @@
 #!/bin/bash
 # resto test case pragmatic proof path
+echo "PRE-PROOF: expecting 7 inferences"
 eye "$@" --single-answer services0.n3 state0.n3  --query restoG.n3 > resto-proof0.n3  2>/dev/null
 eye resto-proof0.n3 --query step-count.n3 --strings 2>/dev/null
+echo "POST-PROOF: expecting 6 inferences"
 eye "$@" --single-answer services1.n3 state1.n3  --query restoG.n3 > resto-proof1.n3  2>/dev/null
 eye resto-proof1.n3 --query step-count.n3 --strings 2>/dev/null
+echo "POST-PROOF with different state: expecting 7 inferences"
+eye "$@" --single-answer services1.n3 state0alt.n3  --query restoG.n3 > resto-proof0alt.n3  2>/dev/null
+eye resto-proof0alt.n3 --query step-count.n3 --strings 2>/dev/null
