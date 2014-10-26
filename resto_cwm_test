@@ -1,0 +1,4 @@
+#!/bin/bash
+# resto test case pragmatic proof path
+cwm resto.n3  --think --filter=restoG.n3 --why > resto-cwm-proof.n3
+cwm resto2.n3 --think --filter=restoG.n3 --why > resto-cwm-proof2.n3
