@@ -6,6 +6,9 @@
 @prefix dc: <http://purl.org/dc/terms/>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 
+# Do something random with ?document and ?user
+{ ?document :x ?user. } => true.
+
 {	?user a foaf:Person.
   ?document a foaf:Document.
 
