@@ -1,0 +1,13 @@
+@prefix : <tmp:>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+
+:a :b :c.
+
+{
+  :a :b ?c.
+  { :a :b ?c. } log:conclusion ?conclusion.
+}
+=>
+{
+  ?conclusion a :Conclusion.
+}.

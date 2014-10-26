@@ -1,0 +1,3 @@
+#!/bin/bash
+eye conclusion.n3 --nope --pass 2>/dev/null
+cwm conclusion.n3 --think --data
