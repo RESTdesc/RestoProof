@@ -1,0 +1,182 @@
+#Processed by Id: euler.yap 7485 2014-10-23 18:44:53Z josd
+#eye --single-answer resto.n3 --query restoG.n3
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX resto: <http://example.org/restaurant#>
+PREFIX : <http://example.org/vocab#>
+PREFIX http: <http://www.w3.org/2011/http#>
+PREFIX con: <http://www.w3.org/2000/10/swap/pim/contact#>
+PREFIX tmpl: <http://purl.org/restdesc/http-template#>
+PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX meteo: <http://purl.org/ns/meteo#>
+PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
+
+[ a r:Proof, r:Conjunction;
+  r:component <#lemma1>;
+  r:gives {
+    _:sk17 resto:hasReservation _:sk24.
+    _:sk24 resto:onDate "12/12/12".
+    _:sk24 resto:place _:sk25.
+    _:sk25 resto:isOutside _:sk18.
+  }].
+
+<#lemma1> a r:Inference; r:gives {_:sk17 resto:hasReservation _:sk24.
+  _:sk24 resto:onDate "12/12/12".
+  _:sk24 resto:place _:sk25.
+  _:sk25 resto:isOutside _:sk18}; r:evidence (
+  <#lemma2>);
+  r:rule <#lemma3>.
+
+<#lemma2> a r:Inference; r:gives {_:sk22 http:methodName "POST".
+  _:sk22 http:requestURI _:sk20.
+  _:sk22 http:body ("12/12/12" _:sk18).
+  _:sk22 http:resp _:sk23.
+  _:sk23 http:body _:sk24.
+  _:sk17 resto:hasReservation _:sk24.
+  _:sk24 resto:onDate "12/12/12".
+  _:sk24 resto:place _:sk25.
+  _:sk25 resto:isOutside _:sk18}; r:evidence (
+  <#lemma4>
+  <#lemma5>);
+  r:rule <#lemma6>.
+
+<#lemma3> a r:Extraction; r:gives {{?x0 resto:hasReservation ?x1.
+  ?x1 resto:onDate ?x2.
+  ?x1 resto:place ?x3.
+  ?x3 resto:isOutside ?x4} => {?x0 resto:hasReservation ?x1.
+  ?x1 resto:onDate ?x2.
+  ?x1 resto:place ?x3.
+  ?x3 resto:isOutside ?x4}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/restoG.n3>].
+
+<#lemma4> a r:Inference; r:gives {_:sk16 http:methodName "POST".
+  _:sk16 http:requestURI "<#myAppointments>".
+  _:sk16 http:body (:RestAppointment _:sk17 _:sk18).
+  _:sk16 http:resp _:sk19.
+  _:sk19 http:body :RestAppointment.
+  :RestAppointment resto:isAt _:sk17.
+  _:sk17 a resto:Restaurant.
+  _:sk17 resto:reservationList _:sk20.
+  _:sk21 resto:isOutside _:sk18}; r:evidence (
+  <#lemma7>
+  <#lemma8>
+  <#lemma9>
+  <#lemma10>
+  <#lemma5>);
+  r:rule <#lemma11>.
+
+<#lemma5> a r:Extraction; r:gives {:RestAppointment resto:hasDate "12/12/12"};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma6> a r:Extraction; r:gives {{?x0 resto:reservationList ?x1.
+  ?x2 resto:isOutside ?x3.
+  ?x4 resto:hasDate ?x5} => {?x6 http:methodName "POST".
+  ?x6 http:requestURI ?x1.
+  ?x6 http:body (?x5 ?x3).
+  ?x6 http:resp ?x7.
+  ?x7 http:body ?x8.
+  ?x0 resto:hasReservation ?x8.
+  ?x8 resto:onDate ?x5.
+  ?x8 resto:place ?x9.
+  ?x9 resto:isOutside ?x3}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma7> a r:Inference; r:gives {_:sk3 http:methodName "GET".
+  _:sk3 http:requestURI ("?location= " _:sk2).
+  _:sk3 http:resp _:sk4.
+  _:sk4 http:body _:sk5.
+  _:sk5 a geo:Point.
+  _:sk5 geo:lat _:sk6.
+  _:sk5 geo:long _:sk7}; r:evidence (
+  <#lemma12>);
+  r:rule <#lemma13>.
+
+<#lemma8> a r:Inference; r:gives {_:sk12 http:methodName "GET".
+  _:sk12 http:requestURI ("CurrentPressure?lat=" _:sk6 "&long=" _:sk7).
+  _:sk12 http:resp _:sk13.
+  _:sk13 http:body _:sk14.
+  _:sk5 meteo:pressure _:sk15.
+  _:sk15 meteo:millibar _:sk14}; r:evidence (
+  <#lemma7>);
+  r:rule <#lemma14>.
+
+<#lemma9> a r:Inference; r:gives {_:sk8 http:methodName "GET".
+  _:sk8 http:requestURI ("CurrentTemperature?lat=" _:sk6 "&long=" _:sk7).
+  _:sk8 http:resp _:sk9.
+  _:sk9 http:body _:sk10.
+  _:sk5 meteo:temperature _:sk11.
+  _:sk11 meteo:celsius _:sk10}; r:evidence (
+  <#lemma7>);
+  r:rule <#lemma15>.
+
+<#lemma10> a r:Extraction; r:gives {:RestAppointment resto:isOn "<#myAppointments>"};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma11> a r:Extraction; r:gives {{?x0 geo:lat ?x1.
+  ?x0 geo:long ?x2.
+  ?x0 meteo:pressure ?x3.
+  ?x0 meteo:temperature ?x4.
+  ?x3 meteo:millibar ?x5.
+  ?x4 meteo:celsius ?x6.
+  ?x7 resto:isOn ?x8.
+  ?x7 resto:hasDate ?x9} => {?x10 http:methodName "POST".
+  ?x10 http:requestURI ?x8.
+  ?x10 http:body (?x7 ?x11 ?x12).
+  ?x10 http:resp ?x13.
+  ?x13 http:body ?x7.
+  ?x7 resto:isAt ?x11.
+  ?x11 a resto:Restaurant.
+  ?x11 resto:reservationList ?x14.
+  ?x15 resto:isOutside ?x12}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma12> a r:Inference; r:gives {_:sk0 http:methodName "GET".
+  _:sk0 http:requestURI (:Areeb).
+  _:sk0 http:resp _:sk1.
+  _:sk1 http:body _:sk2.
+  :Areeb <http://xmlns.com/foaf/0.1/based_near> _:sk2.
+  _:sk2 a con:Address}; r:evidence (
+  <#lemma16>);
+  r:rule <#lemma17>.
+
+<#lemma13> a r:Extraction; r:gives {{?x0 a con:Address} => {?x1 http:methodName "GET".
+  ?x1 http:requestURI ("?location= " ?x0).
+  ?x1 http:resp ?x2.
+  ?x2 http:body ?x3.
+  ?x3 a geo:Point.
+  ?x3 geo:lat ?x4.
+  ?x3 geo:long ?x5}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma14> a r:Extraction; r:gives {{?x0 geo:lat ?x1.
+  ?x0 geo:long ?x2} => {?x3 http:methodName "GET".
+  ?x3 http:requestURI ("CurrentPressure?lat=" ?x1 "&long=" ?x2).
+  ?x3 http:resp ?x4.
+  ?x4 http:body ?x5.
+  ?x0 meteo:pressure ?x6.
+  ?x6 meteo:millibar ?x5}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma15> a r:Extraction; r:gives {{?x0 geo:lat ?x1.
+  ?x0 geo:long ?x2} => {?x3 http:methodName "GET".
+  ?x3 http:requestURI ("CurrentTemperature?lat=" ?x1 "&long=" ?x2).
+  ?x3 http:resp ?x4.
+  ?x4 http:body ?x5.
+  ?x0 meteo:temperature ?x6.
+  ?x6 meteo:celsius ?x5}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma16> a r:Extraction; r:gives {:Areeb a <http://xmlns.com/foaf/0.1/Person>};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+<#lemma17> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>} => {?x1 http:methodName "GET".
+  ?x1 http:requestURI (?x0).
+  ?x1 http:resp ?x2.
+  ?x2 http:body ?x3.
+  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x3.
+  ?x3 a con:Address}};
+  r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/resto.n3>].
+
+#ENDS 0.071 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+
