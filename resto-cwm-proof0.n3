@@ -1,10 +1,10 @@
 #Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
-        #    using base file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797
+        #    using base file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359
         
 #  Notation3 generation by
 #       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
 
-#   Base was: file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797
+#   Base was: file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359
      @prefix : <http://www.w3.org/2000/10/swap/reason#> .
     @prefix con: <http://www.w3.org/2000/10/swap/pim/contact#> .
     @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
@@ -26,31 +26,31 @@
              :binding  [
                  :boundTo  [
                      a :Existential;
-                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g82" ];
+                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g82" ];
                  :variable  [
                      n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#outside" ] ],
                      [
                  :boundTo  [
                      a :Existential;
-                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g81" ];
+                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g81" ];
                  :variable  [
                      n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#restaurant" ] ],
                      [
                  :boundTo  [
                      a :Existential;
-                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g89" ];
+                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g89" ];
                  :variable  [
                      n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#reservation" ] ],
                      [
-                 :boundTo  [
-                     a :Existential;
-                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g90" ];
-                 :variable  [
-                     n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#place" ] ],
-                     [
                  :boundTo "12/12/12";
                  :variable  [
-                     n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#date" ] ];
+                     n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#date" ] ],
+                     [
+                 :boundTo  [
+                     a :Existential;
+                     n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g90" ];
+                 :variable  [
+                     n3:nodeId "file:///Users/ruben/Desktop/resto/restoG.n3#place" ] ];
              :evidence  (
              [
                      a :Extraction;
@@ -59,13 +59,24 @@
                          :binding  [
                              :boundTo  [
                                  a :Existential;
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g82" ];
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g82" ];
                              :variable  [
                                  n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#outside" ] ],
                                  [
                              :boundTo  [
                                  a :Existential;
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g81" ];
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g84" ];
+                             :variable  [
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#reservations" ] ],
+                                 [
+                             :boundTo  [
+                                 n3:uri "http://example.org/vocab#RestAppointment" ];
+                             :variable  [
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#day" ] ],
+                                 [
+                             :boundTo  [
+                                 a :Existential;
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g81" ];
                              :variable  [
                                  n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#restaurant" ] ],
                                  [
@@ -75,20 +86,9 @@
                                  [
                              :boundTo  [
                                  a :Existential;
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g85" ];
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g85" ];
                              :variable  [
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#place" ] ],
-                                 [
-                             :boundTo  [
-                                 n3:uri "http://example.org/vocab#RestAppointment" ];
-                             :variable  [
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#day" ] ],
-                                 [
-                             :boundTo  [
-                                 a :Existential;
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g84" ];
-                             :variable  [
-                                 n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#reservations" ] ];
+                                 n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#place" ] ];
                          :evidence  (
                          [
                                  a :Extraction;
@@ -97,9 +97,9 @@
                                      :binding  [
                                          :boundTo  [
                                              a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g66" ];
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g77" ];
                                          :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#location" ] ],
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#pressure" ] ],
                                              [
                                          :boundTo  [
                                              n3:uri "http://example.org/vocab#RestAppointment" ];
@@ -108,27 +108,19 @@
                                              [
                                          :boundTo  [
                                              a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g73" ];
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g68" ];
+                                         :variable  [
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#long" ] ],
+                                             [
+                                         :boundTo  [
+                                             a :Existential;
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g73" ];
                                          :variable  [
                                              n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#temp" ] ],
                                              [
-                                         :boundTo  [
-                                             a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g72" ];
+                                         :boundTo "12/12/12";
                                          :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#temperature" ] ],
-                                             [
-                                         :boundTo  [
-                                             a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g77" ];
-                                         :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#pressure" ] ],
-                                             [
-                                         :boundTo  [
-                                             a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g67" ];
-                                         :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#lat" ] ],
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#date" ] ],
                                              [
                                          :boundTo "<#myAppointments>";
                                          :variable  [
@@ -136,19 +128,27 @@
                                              [
                                          :boundTo  [
                                              a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g78" ];
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g67" ];
                                          :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#pres" ] ],
-                                             [
-                                         :boundTo "12/12/12";
-                                         :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#date" ] ],
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#lat" ] ],
                                              [
                                          :boundTo  [
                                              a :Existential;
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g68" ];
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g78" ];
                                          :variable  [
-                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#long" ] ];
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#pres" ] ],
+                                             [
+                                         :boundTo  [
+                                             a :Existential;
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g72" ];
+                                         :variable  [
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#temperature" ] ],
+                                             [
+                                         :boundTo  [
+                                             a :Existential;
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g66" ];
+                                         :variable  [
+                                             n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#location" ] ];
                                      :evidence  (
                                      [
                                              a :Extraction;
@@ -157,19 +157,19 @@
                                                  :binding  [
                                                      :boundTo  [
                                                          a :Existential;
-                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g67" ];
+                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g67" ];
                                                      :variable  [
                                                          n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#lat" ] ],
                                                          [
                                                      :boundTo  [
                                                          a :Existential;
-                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g66" ];
+                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g66" ];
                                                      :variable  [
                                                          n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#location" ] ],
                                                          [
                                                      :boundTo  [
                                                          a :Existential;
-                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g68" ];
+                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g68" ];
                                                      :variable  [
                                                          n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#long" ] ];
                                                  :evidence  (
@@ -212,24 +212,33 @@
                                             } ]
                                      [
                                              a :Extraction;
+                                             :because run:_g2;
+                                             :gives { @forSome run:_g4,
+                                                        run:_g5,
+                                                        run:_g6 .
+                                            run:_g4     geo:lat run:_g5;
+                                                 geo:long run:_g6 .
+                                            } ]
+                                     [
+                                             a :Extraction;
                                              :because  [
                                                  a :Inference;
                                                  :binding  [
                                                      :boundTo  [
                                                          a :Existential;
-                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g67" ];
+                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g67" ];
                                                      :variable  [
                                                          n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#lat" ] ],
                                                          [
                                                      :boundTo  [
                                                          a :Existential;
-                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g66" ];
+                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g66" ];
                                                      :variable  [
                                                          n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#location" ] ],
                                                          [
                                                      :boundTo  [
                                                          a :Existential;
-                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g68" ];
+                                                         n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g68" ];
                                                      :variable  [
                                                          n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#long" ] ];
                                                  :evidence  (
@@ -275,15 +284,6 @@
                                              :because run:_g3;
                                              :gives {vocab:RestAppointment     resto:hasDate "12/12/12";
                                                  resto:isOn "<#myAppointments>" .
-                                            } ]
-                                     [
-                                             a :Extraction;
-                                             :because run:_g2;
-                                             :gives { @forSome run:_g4,
-                                                        run:_g5,
-                                                        run:_g6 .
-                                            run:_g4     geo:lat run:_g5;
-                                                 geo:long run:_g6 .
                                             } ] );
                                      :rule  [
                                          a :Extraction;
@@ -417,7 +417,7 @@
          :binding  [
              :boundTo  [
                  a :Existential;
-                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414430565.735597p21797#_g62" ];
+                 n3:nodeId "file:///Users/ruben/Desktop/resto/.run-1414438711.241586p25359#_g62" ];
              :variable  [
                  n3:nodeId "file:///Users/ruben/Desktop/resto/services0.n3#address" ] ];
          :evidence  (
