@@ -6,10 +6,10 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX con: <http://www.w3.org/2000/10/swap/pim/contact#>
 PREFIX tmpl: <http://purl.org/restdesc/http-template#>
 PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX : <http://example.org/vocab#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX meteo: <http://purl.org/ns/meteo#>
 PREFIX resto: <http://example.org/restaurant#>
-PREFIX : <http://example.org/vocab#>
 PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 
 [ a r:Proof, r:Conjunction;
@@ -183,5 +183,5 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x4 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
-#ENDS 0.122 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.082 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 

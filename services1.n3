@@ -5,15 +5,27 @@
 @prefix tmpl: <http://purl.org/restdesc/http-template#>.
 @prefix dc: <http://purl.org/dc/terms/>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://example.org/vocab#>.
 
 {	?user a foaf:Person.
   ?document a foaf:Document.
 
   # Previously used bindings of this API call are not allowed anymore
-  {
-    ?user log:notEqualTo :Areeb.
-    ?document log:notEqualTo :MyDocument.
-  }!log:conclusion
+  ?user log:notEqualTo :Areeb.
+}
+=>
+{	_:request http:methodName "GET";
+		http:requestURI (?user);
+		http:resp [ http:body _:address ].
+	?user foaf:based_near _:address.
+	_:address a con:Address.
+}.
+
+{	?user a foaf:Person.
+  ?document a foaf:Document.
+
+  # Previously used bindings of this API call are not allowed anymore
+  ?document log:notEqualTo :MyDocument.
 }
 =>
 {	_:request http:methodName "GET";

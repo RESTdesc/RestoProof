@@ -4,6 +4,7 @@
 @prefix con: <http://www.w3.org/2000/10/swap/pim/contact#>.
 @prefix tmpl: <http://purl.org/restdesc/http-template#>.
 @prefix dc: <http://purl.org/dc/terms/>.
+@prefix : <http://example.org/vocab#>.
 
 {	?user a foaf:Person.
   ?document a foaf:Document.

@@ -7,10 +7,10 @@ PREFIX con: <http://www.w3.org/2000/10/swap/pim/contact#>
 PREFIX tmpl: <http://purl.org/restdesc/http-template#>
 PREFIX dc: <http://purl.org/dc/terms/>
 PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX : <http://example.org/vocab#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX meteo: <http://purl.org/ns/meteo#>
 PREFIX resto: <http://example.org/restaurant#>
-PREFIX : <http://example.org/vocab#>
 PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 
 [ a r:Proof, r:Conjunction;
@@ -140,8 +140,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   _:sk2 a con:Address}; r:evidence (
   <#lemma16>
   <#lemma17>
-  [ a r:Fact; r:gives {{:Bart log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>.
-    :MyDocument log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#MyDocument>} log:conclusion true}]);
+  [ a r:Fact; r:gives {:Bart log:notEqualTo :Areeb}]);
   r:rule <#lemma18>.
 
 <#lemma13> a r:Extraction; r:gives {{?x0 a con:Address} => {?x1 http:methodName "GET".
@@ -179,14 +178,13 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 
 <#lemma18> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>.
   ?x1 a <http://xmlns.com/foaf/0.1/Document>.
-  {?x0 log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>.
-    ?x1 log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#MyDocument>} log:conclusion ?x2} => {?x3 http:methodName "GET".
-  ?x3 http:requestURI (?x0).
-  ?x3 http:resp ?x4.
-  ?x4 http:body ?x5.
-  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x5.
-  ?x5 a con:Address}};
+  ?x0 log:notEqualTo :Areeb} => {?x2 http:methodName "GET".
+  ?x2 http:requestURI (?x0).
+  ?x2 http:resp ?x3.
+  ?x3 http:body ?x4.
+  ?x0 <http://xmlns.com/foaf/0.1/based_near> ?x4.
+  ?x4 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
-#ENDS 0.144 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.075 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 
