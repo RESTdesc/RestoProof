@@ -133,14 +133,14 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
 <#lemma12> a r:Inference; r:gives {_:sk0 http:methodName "GET".
-  _:sk0 http:requestURI (:Areeb).
+  _:sk0 http:requestURI (:Bart).
   _:sk0 http:resp _:sk1.
   _:sk1 http:body _:sk2.
-  :Areeb <http://xmlns.com/foaf/0.1/based_near> _:sk2.
+  :Bart <http://xmlns.com/foaf/0.1/based_near> _:sk2.
   _:sk2 a con:Address}; r:evidence (
   <#lemma16>
   <#lemma17>
-  [ a r:Fact; r:gives {{:Areeb log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>.
+  [ a r:Fact; r:gives {{:Bart log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#Areeb>.
     :MyDocument log:notEqualTo <file:///Users/ruben/Desktop/resto/services1.n3#MyDocument>} log:conclusion true}]);
   r:rule <#lemma18>.
 
@@ -171,7 +171,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x6 meteo:celsius ?x5}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
-<#lemma16> a r:Extraction; r:gives {:Areeb a <http://xmlns.com/foaf/0.1/Person>};
+<#lemma16> a r:Extraction; r:gives {:Bart a <http://xmlns.com/foaf/0.1/Person>};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/state0alt.n3>].
 
 <#lemma17> a r:Extraction; r:gives {:MyDocument a <http://xmlns.com/foaf/0.1/Document>};
@@ -188,5 +188,5 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x5 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
-#ENDS 0.140 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.144 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 

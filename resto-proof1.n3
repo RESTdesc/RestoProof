@@ -162,5 +162,5 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x6 meteo:celsius ?x5}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
-#ENDS 0.139 [sec] TC=6 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.172 [sec] TC=6 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 
