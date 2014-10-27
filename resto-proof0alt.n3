@@ -140,7 +140,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   _:sk2 a con:Address}; r:evidence (
   <#lemma16>
   <#lemma17>
-  [ a r:Fact; r:gives {:Bart log:notEqualTo :Areeb}]);
+  [ a r:Fact; r:gives {(:Bart :MyDocument) log:notEqualTo (:Areeb :MyDocument)}]);
   r:rule <#lemma18>.
 
 <#lemma13> a r:Extraction; r:gives {{?x0 a con:Address} => {?x1 http:methodName "GET".
@@ -178,7 +178,7 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
 
 <#lemma18> a r:Extraction; r:gives {{?x0 a <http://xmlns.com/foaf/0.1/Person>.
   ?x1 a <http://xmlns.com/foaf/0.1/Document>.
-  ?x0 log:notEqualTo :Areeb} => {?x2 http:methodName "GET".
+  (?x0 ?x1) log:notEqualTo (:Areeb :MyDocument)} => {?x2 http:methodName "GET".
   ?x2 http:requestURI (?x0).
   ?x2 http:resp ?x3.
   ?x3 http:body ?x4.
@@ -186,5 +186,5 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x4 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services1.n3>].
 
-#ENDS 0.075 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.071 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 

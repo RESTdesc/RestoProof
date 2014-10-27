@@ -183,5 +183,5 @@ PREFIX r: <http://www.w3.org/2000/10/swap/reason#>
   ?x4 a con:Address}};
   r:because [ a r:Parsing; r:source <file:///Users/ruben/Desktop/resto/services0.n3>].
 
-#ENDS 0.082 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
+#ENDS 0.077 [sec] TC=7 TP=7 BC=0 BP=0 PM=0 CM=0 FM=0 AM=0
 

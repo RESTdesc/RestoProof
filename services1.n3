@@ -11,21 +11,7 @@
   ?document a foaf:Document.
 
   # Previously used bindings of this API call are not allowed anymore
-  ?user log:notEqualTo :Areeb.
-}
-=>
-{	_:request http:methodName "GET";
-		http:requestURI (?user);
-		http:resp [ http:body _:address ].
-	?user foaf:based_near _:address.
-	_:address a con:Address.
-}.
-
-{	?user a foaf:Person.
-  ?document a foaf:Document.
-
-  # Previously used bindings of this API call are not allowed anymore
-  ?document log:notEqualTo :MyDocument.
+  (?user ?document) log:notEqualTo (:Areeb :MyDocument).
 }
 =>
 {	_:request http:methodName "GET";
